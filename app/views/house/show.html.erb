@@ -1,0 +1,7 @@
+<%= form_for :house do |f| %>
+    Tax: <%= f.text_field :tax %><br />
+    Bedroom : <%= f.text_field :bedroom %><br />
+    Bath : <%= f.text_field :bath %><br />
+    Size    : <%= f.text_field :size %><br />
+    <%= f.submit 'Predict Price'%>
+<% end %>

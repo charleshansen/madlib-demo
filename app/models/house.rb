@@ -1,14 +1,23 @@
 class House < ActiveRecord::Base
   def self.train_price
     connection = ActiveRecord::Base.connection()
-    sql = <<-SQL
+
+    output_table = 'houses_linregr'
+
+    cleanup_sql = <<-SQL
+      DROP TABLE IF EXISTS #{output_table};
+      DROP TABLE IF EXISTS #{output_table}_summary;
+    SQL
+
+    train_sql = <<-SQL
       SELECT madlib.linregr_train( 'houses',
-                                   'houses_linregr',
+                                   '#{output_table}',
                                    'price',
                                    'ARRAY[1, tax, bedroom, bath, size]'
     );
     SQL
-    connection.execute sql
+    connection.execute cleanup_sql
+    connection.execute train_sql
   end
 
   def self.predict_price(house_info)

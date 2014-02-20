@@ -39,4 +39,9 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  config.before(:suite) do
+    `/usr/local/madlib/bin/madpack -p postgres -c madlib-user/''@localhost:5432/madlib-demo_test install`
+    `RAILS_ENV=test rake db:seed`
+  end
 end
