@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 1.2'
 group :test do
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'database_cleaner'
 end
 
 # Use ActiveModel has_secure_password

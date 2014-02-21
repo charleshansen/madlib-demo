@@ -1,8 +1,9 @@
-<div>Predicting housing price based on a training set with <%=@training_set_size%> data points.</div>
 <%= form_for :house do |f| %>
     Tax: <%= f.text_field :tax %><br />
     Bedroom : <%= f.text_field :bedroom %><br />
     Bath : <%= f.text_field :bath %><br />
+    Price : <%= f.text_field :price %><br />
     Size    : <%= f.text_field :size %><br />
-    <%= f.submit 'Predict Price'%>
+    Lot    : <%= f.text_field :lot %><br />
+    <%= f.submit 'Add House'%>
 <% end %>

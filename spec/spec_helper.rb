@@ -41,7 +41,8 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.before(:suite) do
+    DatabaseCleaner.clean_with(:truncation)
     `/usr/local/madlib/bin/madpack -p postgres -c madlib-user/''@localhost:5432/madlib-demo_test install`
-    `RAILS_ENV=test rake db:seed`
+    load "#{Rails.root}/db/seeds.rb"
   end
 end
