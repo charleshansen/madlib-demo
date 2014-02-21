@@ -1,6 +1,8 @@
 class House < ActiveRecord::Base
+  establish_connection "hawq_#{Rails.env}"
+
   def self.train_price
-    connection = ActiveRecord::Base.connection()
+    connection = House.connection()
 
     output_table = 'houses_linregr'
 
@@ -21,7 +23,7 @@ class House < ActiveRecord::Base
   end
 
   def self.predict_price(house_info)
-    connection = ActiveRecord::Base.connection()
+    connection = House.connection()
     sql = <<-SQL
       select madlib.linregr_predict( ARRAY[1,#{house_info[:tax]},#{house_info[:bedroom]},#{house_info[:bath]},#{house_info[:size]}], houses_linregr.coef) from houses_linregr;
     SQL

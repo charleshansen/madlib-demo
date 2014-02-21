@@ -22,6 +22,15 @@ development:
   username: pivotal
   password:
 
+hawq_development:
+  adapter: postgresql
+  encoding: unicode
+  database: gpadmin
+  host: 172.16.30.128
+  pool: 5
+  username: gpadmin
+  password:
+
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
   # domain sockets, so uncomment these lines.
@@ -43,13 +52,16 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
+test: &test
   adapter: postgresql
   encoding: unicode
   database: madlib-demo_test
   pool: 5
   username: pivotal
   password:
+
+hawq_test:
+  <<: *test
 
 production:
   adapter: postgresql
