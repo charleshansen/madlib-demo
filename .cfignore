@@ -2,4 +2,4 @@ log
 tmp
 vendor
 .bundle
-config/database.yml
+spec

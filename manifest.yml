@@ -1,0 +1,7 @@
+applications:
+- name: madlib-demo-staging
+  memory: 512M
+  instances: 1
+  url: madlib-demo-staging.cfapps.io
+  command: bundle exec rake db:migrate && bundle exec rails s -p $PORT
+  path: .
