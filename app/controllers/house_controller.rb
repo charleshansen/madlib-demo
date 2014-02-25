@@ -20,7 +20,7 @@ class HouseController < ApplicationController
       House.create(Hash[headers.zip(row)])
     end
 
-    render :gather_housing_data
+    render :create
   end
 
   def gather_housing_data
