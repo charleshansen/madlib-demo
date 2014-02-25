@@ -1,3 +1,8 @@
+<%= form_tag({action: :upload_csv}, multipart: true) do%>
+    <%= file_field_tag :csv_file %>
+    <%= submit_tag "Upload" %>
+<% end %>
+
 <%= form_for :house do |f| %>
     Tax: <%= f.text_field :tax %><br />
     Bedroom : <%= f.text_field :bedroom %><br />

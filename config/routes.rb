@@ -11,6 +11,7 @@ MadlibDemo::Application.routes.draw do
 
      get 'add_housing_prices' => 'house#gather_housing_data'
      post 'add_housing_prices' => 'house#create'
+     post 'upload_housing_data' => 'house#upload_csv'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
