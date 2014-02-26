@@ -1,0 +1,62 @@
+$background: #F2F9F8;
+$action: #1B85AA;
+$titles: #385B57;
+$text: #010C0B;
+
+body{
+  font-family: helvetica neue, lucida grande, sans-serif;
+  background: $background;
+  color: $text;
+  margin: 0px;
+}
+
+ .wrapper{
+   margin: 8px;
+ }
+
+h3{
+  color: $titles;
+  font-weight: normal;
+}
+
+header{
+  margin: 0px 0px;
+  padding: 8px;
+  background: $titles;
+  color: $background;
+}
+
+form{
+  span{
+    display:inline-block;
+    width: 80px;
+  }
+}
+
+input{
+  margin:5px 3px;
+}
+
+input:not([type=submit]):not([type=file]){
+    padding: 0px;
+    line-height: 20px;
+    border: none;
+    -moz-box-shadow:    inset 0px 1px 5px #999;
+    -webkit-box-shadow: inset 0px 1px 5px #999;
+    box-shadow:         inset 0px 1px 5px #999;
+}
+
+input[type=submit]{
+  display: block;
+  background: $action;
+  color: white;
+  border: none;
+  padding: 7px 25px;
+  font-size: 14px;
+}
+
+.form-wrapper{
+  width: 400px;
+  margin:10px;
+  padding: 8px;
+}

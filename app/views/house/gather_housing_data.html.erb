@@ -1,14 +1,19 @@
-<%= form_tag({action: :upload_csv}, multipart: true) do%>
-    <%= file_field_tag :csv_file %>
-    <%= submit_tag "Upload" %>
-<% end %>
-
-<%= form_for :house do |f| %>
-    Tax: <%= f.text_field :tax %><br />
-    Bedroom : <%= f.text_field :bedroom %><br />
-    Bath : <%= f.text_field :bath %><br />
-    Price : <%= f.text_field :price %><br />
-    Size    : <%= f.text_field :size %><br />
-    Lot    : <%= f.text_field :lot %><br />
-    <%= f.submit 'Add House'%>
-<% end %>
+<div class="form-wrapper">
+  <h3>Upload Housing Data From CSV</h3>
+  <%= form_tag({action: :upload_csv}, multipart: true) do %>
+      <%= file_field_tag :csv_file %>
+      <%= submit_tag "Upload" %>
+  <% end %>
+</div>
+<div class="form-wrapper">
+  <h3>Add Housing Data</h3>
+  <%= form_for :house do |f| %>
+      <div><span>Tax:</span><%= f.text_field :tax %></div>
+      <div><span>Bedroom:</span><%= f.text_field :bedroom %></div>
+      <div><span>Bath:</span><%= f.text_field :bath %></div>
+      <div><span>Price:</span><%= f.text_field :price %></div>
+      <div><span>Size:</span><%= f.text_field :size %></div>
+      <div><span>Lot:</span><%= f.text_field :lot %></div>
+      <%= f.submit 'Add House' %>
+  <% end %>
+</div>
