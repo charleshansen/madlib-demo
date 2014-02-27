@@ -42,7 +42,7 @@ RSpec.configure do |config|
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
-    `/usr/local/madlib/bin/madpack -p postgres -c madlib-user/''@localhost:5432/madlib-demo_test install`
+    `/usr/local/madlib/bin/madpack -p postgres -c pivotal/''@localhost:5432/madlib-demo_test install`
     load "#{Rails.root}/db/seeds.rb"
   end
 end
