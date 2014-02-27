@@ -3,3 +3,5 @@ tmp
 vendor
 .bundle
 config/database.yml
+aws-key-pair.pem
+.idea/
