@@ -7,7 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header>MADlibs</header>
+<header>MADlibs
+  <a href="/housing_prices" class="run_predictions">Run Predictions</a>
+  <a href="/add_housing_prices" class="add_data">Add Data</a>
+</header>
 
 <div class="wrapper">
   <%= yield %>

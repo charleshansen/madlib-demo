@@ -1,10 +1,13 @@
 <div class="form-wrapper">
-<h3>Predicting housing price based on a training set with <%=@training_set_size%> data points.</h3>
-<%= form_for :house do |f| %>
+  <h3>Predicting housing price based on a training set with <%= @training_set_size %> data points.</h3>
+  <%= form_for :house do |f| %>
     <div><span>Tax:</span><%= f.text_field :tax %></div>
     <div><span>Bedroom:</span><%= f.text_field :bedroom %></div>
     <div><span>Bath:</span><%= f.text_field :bath %></div>
     <div><span>Size:</span><%= f.text_field :size %></div>
-    <%= f.submit 'Predict Price'%>
-<% end %>
+    <%= f.submit 'Predict Price' %>
+  <% end %>
 </div>
+<script>
+  $(".run_predictions").toggleClass('selected');
+</script>

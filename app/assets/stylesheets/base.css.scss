@@ -1,5 +1,6 @@
 $background: #F2F9F8;
 $action: #1B85AA;
+$selected: lighten($action,5%);
 $titles: #385B57;
 $text: #010C0B;
 
@@ -24,6 +25,23 @@ header{
   padding: 8px;
   background: $titles;
   color: $background;
+  :first-child{
+    margin-left: 40px;
+  }
+  a {
+    color: $background;
+    text-decoration: none;
+  }
+}
+
+a {
+  margin: 0px 10px;
+  padding-bottom: 3px;
+  font-size: 14px;
+}
+
+.selected{
+  border-bottom: solid 5px $selected;
 }
 
 form{
